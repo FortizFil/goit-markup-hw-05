@@ -27,11 +27,13 @@
   font-weight: 900;
   color: var(--white-text);
   letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .hero-link {
   min-width: 200px;
   display: inline-block;
+  border: none;
   border-radius: 4px;
   padding: 10px 32px;
 
@@ -112,10 +114,39 @@
 
 .example-item {
   margin-left: 30px;
+  position: relative;
 }
 
 .example-item:first-child {
   margin-left: 0px;
+}
+
+.img-example {
+  display: block;
+}
+
+.example-name {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background-image: linear-gradient(
+    to right,
+    var(--backgroundblack-color),
+    var(--backgroundblack-color)
+  );
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.14;
+  font-weight: 700;
+  color: var(--white-text);
+  letter-spacing: 0.03em;
 }
 
 .person-secrion {
@@ -185,6 +216,8 @@
   justify-content: center;
   align-items: center;
   color: var(--svg-maincolor);
+  transition: background-color 250ms var(--time-cubic),
+    border-radius 250ms var(--time-cubic), color 250ms var(--time-cubic);
 }
 
 .network-link:hover,
@@ -192,6 +225,7 @@
   border-radius: 50px;
   background-color: var(--blue-text);
   color: var(--white-text);
+  outline: none;
 }
 
 .network-svg {
@@ -219,14 +253,55 @@
   justify-content: center;
   color: var(--svg-maincolor);
   border-radius: 4px;
+  transition: color 250ms var(--time-cubic), border 250ms var(--time-cubic);
 }
 
 .clients-link:hover,
 .clients-link:focus {
   color: var(--blue-text);
   border: 1px solid var(--blue-text);
+  outline: none;
 }
 
 .clients-icon {
   fill: currentColor;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--backdrop-color);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 40px;
+
+  width: 480px;
+  height: 480px;
+  background-color: var(--white-text);
+}
+
+.button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--white-text);
+  outline: none;
 }
